@@ -1,0 +1,1 @@
+$('.offered-course .col.s12:nth-child(3)').find('.small-title').attr('data-aos','fade-left');
