@@ -1,0 +1,5 @@
+if($(this).prop("checked") == true){
+
+        $(this).parents('.form-bottompart').find('button').removeClass(' disabled btn');
+
+      }
