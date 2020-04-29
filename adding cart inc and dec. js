@@ -1,0 +1,16 @@
+	$('.dec').click(function() {
+		var qtyNode =$(this).next();
+		var qty =qtyNode.val();
+		if (qty > 1) {
+			qtyNode.val(--qty);
+		}
+	});
+	$('.inc').click(function() {
+		var qtyNode =$(this).prev();
+		var max= qtyNode.attr('max');
+		max = parseInt(max)
+		var qty =qtyNode.val();
+		if (qty<max) {
+			qtyNode.val(++qty);
+		}
+	});	
