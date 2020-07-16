@@ -1,0 +1,4 @@
+customPaging : function(slider, i) {
+			var thumb = jQuery(slider.$slides[i]).data();
+			return '<button>'+('0'+(i+1)).slice(-2)+'</button>';
+		},
