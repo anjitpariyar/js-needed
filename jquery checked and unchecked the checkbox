@@ -1,0 +1,6 @@
+$(".check").click(function(){
+        $("#myCheck").prop("checked", true);
+    });
+    $(".uncheck").click(function(){
+        $("#myCheck").prop("checked", false);
+    })
