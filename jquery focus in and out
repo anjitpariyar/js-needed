@@ -1,0 +1,7 @@
+$('elem).focusin(  
+  function(){  
+    $(this).addClass('active');  
+  }).focusout(  
+  function(){  
+    $(this).removeClass('active');  
+  });
