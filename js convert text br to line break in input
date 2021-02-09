@@ -1,0 +1,13 @@
+// edit post
+	let elem;
+	let editFormText = $('.modal--edit textarea');
+	$('.edit--post--trigger').click(function(e){
+		elem = $(this).parents('.card ').find('.card__body .user__text');
+		let elemVal = elem.html().replace(/<br>/g, '\n'); 
+		editFormText.val(elemVal)
+	})
+
+	$('.modal--edit  form').submit(function(e){
+		let elemVal = editFormText.val().replace(/\n/g, '<br>'); 
+		elem.html(elemVal);
+	})
