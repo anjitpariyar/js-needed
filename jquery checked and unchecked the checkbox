@@ -4,3 +4,18 @@ $(".check").click(function(){
     $(".uncheck").click(function(){
         $("#myCheck").prop("checked", false);
     })
+
+
+//rating
+$(document).ready(function(){
+		$('#rate-form input[name=rate]').change(function(e){
+			$(this).parent().nextAll().find('input').prop("checked", false)
+
+			if($(this).prop("checked", true)){
+				$(this).parent().prevAll().find('input').prop("checked", true)
+			}
+			else{
+				$(this).parent().prevAll().find('input').prop("checked", fasle)
+			}
+		})
+	})
