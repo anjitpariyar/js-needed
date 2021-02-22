@@ -1,0 +1,5 @@
+$('#credit-card').on('keypress change', function () {
+			$(this).val(function (index, value) {
+				return value.replace(/[^0-9]/g, "").replace(/\W/gi, '').replace(/(.{4})/g, '$1 ');
+			});
+		});
