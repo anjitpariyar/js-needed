@@ -1,2 +1,7 @@
-let parentFormHide = parent.find('.sign-up--form:hidden')[0];
-			let parentFormVisible = parent.find('.sign-up--form:visible')[0];
+    let parentFormHide = parent.find(elem)[0];
+    let parentFormVisible = parent.find(elem)[0];
+
+    //for logical
+
+    $(elem).is(":visible") 
+    $(elem).is(":hidden") 
