@@ -1,0 +1,23 @@
+let meta = document.getElementsByTagName("META");
+  meta = [...meta];
+  meta.map((elem) => {
+    if (elem.name === "theme-color") meta = elem;
+  });
+
+  
+  if (getCookie("theme") === "dark") {
+    meta.content = "#222";
+  } else {
+    meta.content = "#fff";
+  }
+
+  //Theme Toggle
+  var getthem = document.querySelector(".theme-switch");
+
+  getthem.addEventListener("click", () => {
+    if (getCookie("theme") === "light") {
+      meta.content = "#222";
+    } else {
+      meta.content = "#fff";
+    }
+  });
