@@ -1,0 +1,5 @@
+return function(e) {
+						result = e.target.result;
+						if(input.type === 'video/webm' || input.type === 'video/mp4' ){
+						result = './gallery'
+					}
