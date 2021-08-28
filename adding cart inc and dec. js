@@ -1,16 +1,84 @@
-	$('.dec').click(function() {
-		var qtyNode =$(this).next();
-		var qty =qtyNode.val();
-		if (qty > 1) {
-			qtyNode.val(--qty);
-		}
-	});
-	$('.inc').click(function() {
-		var qtyNode =$(this).prev();
-		var max= qtyNode.attr('max');
-		max = parseInt(max)
-		var qty =qtyNode.val();
-		if (qty<max) {
-			qtyNode.val(++qty);
-		}
-	});	
+$(".dec").click(function () {
+    var qtyNode = $(this).next();
+    var qty = qtyNode.val();
+    if (qty > 1) {
+      qtyNode.val(--qty);
+      $(".inc").removeClass("disabled");
+    } else {
+      $(this).addClass("disabled");
+    }
+  });
+  $(".inc").click(function () {
+    var qtyNode = $(this).prev();
+    var max = qtyNode.attr("max");
+    max = parseInt(max);
+    var qty = qtyNode.val();
+    if (qty < max) {
+      qtyNode.val(++qty);
+      $(".dec").removeClass("disabled");
+    } else {
+      $(this).addClass("disabled");
+    }
+  });
+  
+  
+  //html
+  <div class="add-cart">
+                                                  <p class="text-muted small">*you can add upto 5</p>
+                                                  <div class="wrapper">
+                                                       <a href="#!" id="minus" class="minus dec disabled">
+                                                            <i class="bi bi-dash-lg"></i>
+                                                       </a>
+                                                       <input id="qty" type="number" value="1" min="1" max="5" class="qty">
+                                                       <a href="#!" id="plus" class="minus inc">
+                                                            <i class="bi bi-plus-lg"></i>
+                                                       </a>
+                                                  </div>
+                                                  
+                                             </div>
+//scss
+
+
+.add-cart {
+  margin: 2.5em 0px 1.5em;
+  input {
+    height: 35px;
+    width: 40px;
+    color: #333;
+    background-color: transparent;
+    border: none;
+    text-align: center;
+  }
+  .wrapper {
+    width: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    .minus {
+      height: 100%;
+      text-align: center;
+      padding: 5px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      border: 1px solid var(--black);
+      border-radius: 9px;
+      line-height: 1;
+      font-size: 0.7em;
+      &.disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+      }
+    }
+  }
+}
+					     
