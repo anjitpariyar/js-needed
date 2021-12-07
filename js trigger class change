@@ -1,0 +1,26 @@
+//modal class change event
+  const modalBody = document.querySelector("body");
+  const options = {
+    attributes: true,
+  };
+
+  function callback(mutationList, observer) {
+    mutationList.forEach(function (mutation) {
+      if (
+        mutation.type === "attributes" &&
+        mutation.attributeName === "class"
+      ) {
+        // handle class change
+        if ($(modalBody).hasClass("modal-open")) {
+          console.log("true");
+          $("html").addClass("modal-open");
+        } else {
+          console.log("fasle");
+          $("html").removeClass("modal-open");
+        }
+      }
+    });
+  }
+
+  const observer = new MutationObserver(callback);
+  observer.observe(modalBody, options);
